@@ -3,10 +3,10 @@
 #include "../include/report.hpp"
 
 int main(int argc, char const *argv[]) {
-    string officeOption = argv[0];
-    string candidatesFilePath = argv[1];
-    string pollFilePath = argv[2];
-    string dateString = argv[3];
+    string officeOption = argv[1];
+    string candidatesFilePath = argv[2];
+    string pollFilePath = argv[3];
+    string dateString = argv[4];
 
     cout << "officeOption: " << officeOption << endl;
     cout << "candidatesFilePath: " << candidatesFilePath << endl;
