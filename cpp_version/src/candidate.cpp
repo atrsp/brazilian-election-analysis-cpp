@@ -49,7 +49,7 @@ Candidate::Candidate(int office, int number, string ballotName, int partyNumber,
 
     int Candidate::calculateAge(Date birthDate, Date electionDate)
     {
-        
+        return 0;
     }
 
     int Candidate::getOfficeOption()const

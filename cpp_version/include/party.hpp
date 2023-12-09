@@ -5,6 +5,7 @@ using namespace std;
 
 #include <iostream>
 #include <list>
+#include <map>
 #include "./candidate.hpp"
 
 class Candidate;
@@ -20,10 +21,15 @@ private:
     int nominalVotes; 
     int totalVotes; //listVotes + nominalVotes
 
+    //vitor:
+    map<int, Candidate*> candidates;
+    map<int, Candidate*> dismissedCandidates;
+
+    //java:
     //private Map<Integer, Candidate> candidates;
     //private Map<Integer, Candidate> dismissedCandidates;
 
-    //John Wick:
+    //John Wick (JP?):
     //list<Candidate*> listaCandidatosPartido;
 
 public:
