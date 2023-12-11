@@ -25,22 +25,15 @@ private:
     map<int, Candidate*> candidates;
     map<int, Candidate*> dismissedCandidates;
 
-    //java:
-    //private Map<Integer, Candidate> candidates;
-    //private Map<Integer, Candidate> dismissedCandidates;
-
-    //John Wick (JP?):
-    //list<Candidate*> listaCandidatosPartido;
-
 public:
 
     Party(int number, string acronym, string name);
 
     void setTotalVotes();
     void addVotes(int votes);
-    void addCandidate(int candidateNumber, Candidate c);
+    void addCandidate(int candidateNumber, Candidate* c);
     void addCandidateVotes(int votes, int candidateNumber);
-    void addDismissedCandidate(int candidateNumber, Candidate c);
+    void addDismissedCandidate(int candidateNumber, Candidate* c);
 
     int getListVotes()const;
     int getTotalVotes()const;
@@ -54,7 +47,7 @@ public:
     string getPartyName()const;
     string getPartyAcronym()const;
     
-    list<Candidate*> getCandidates()const;
+    map<int, Candidate*> getCandidates()const;
     
     // int compareTo(Party o);
 };

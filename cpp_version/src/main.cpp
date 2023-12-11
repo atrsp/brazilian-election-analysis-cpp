@@ -1,8 +1,12 @@
 #include "../include/election.hpp"
+#include "../include/party.hpp"
+#include "../include/candidate.hpp"
 #include "../include/csvReader.hpp"
 #include "../include/report.hpp"
 
 int main(int argc, char const *argv[]) {
+
+    /*
     string officeOption = argv[1];
     string candidatesFilePath = argv[2];
     string pollFilePath = argv[3];
@@ -34,5 +38,11 @@ int main(int argc, char const *argv[]) {
     report.report9(); 
     report.report10();
 
+    */
+    Date date;
+    Candidate c(1, 11123, "SANDRO HELENO GOMES DE SOUZA", 11, "PT", 1, "25/05/04", 1, 2, "sla", 1, date);
+    Party p (11, "PT", "Partido dos Trabalhadores");
+
+    p.addCandidate(c.getCandidateNumber(), &c);
     return 0;
 }

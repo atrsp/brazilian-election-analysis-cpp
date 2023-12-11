@@ -1,5 +1,8 @@
 #include "../include/party.hpp"
 
+#include <iostream>
+#include <map>
+#include <list>
 
 Party::Party(int number, string acronym, string name)
 {
@@ -24,32 +27,32 @@ void Party::addVotes(int votes)
     this->listVotes += votes;
 }
 
-void Party::addCandidate(int candidateNumber, Candidate c)
-{
-    /*
-    if (candidates->containsKey(candidateNumber) == false) {
-        candidates->put(candidateNumber, c);
+void Party::addCandidate(int candidateNumber, Candidate* c)
+{   
+    
+    auto it = candidates.find(candidateNumber);
+    if (it == candidates.end()) {
+        candidates.insert({candidateNumber, c});
         numberOfCandidates+=1;
     }
-    */
+    
 }
 
 void Party::addCandidateVotes(int votes, int candidateNumber)
 {
-    /*
-    Candidate c = candidates->get(candidateNumber);
-    c->addVotes(votes);
+    
+    auto it = candidates.find(candidateNumber);
+    it->second->addVotes(votes);
     this->nominalVotes += votes;
-    */
+    
 }
 
-void Party::addDismissedCandidate(int candidateNumber, Candidate c)
+void Party::addDismissedCandidate(int candidateNumber, Candidate* c)
 {
-    /* 
-    if (dismissedCandidates->containsKey(candidateNumber) == false) {
-        dismissedCandidates->put(candidateNumber, c);
+    auto it = dismissedCandidates.find(candidateNumber);
+    if (it == dismissedCandidates.end()) {
+        dismissedCandidates.insert({candidateNumber, c});
     }
-    */
 }
 
 
@@ -109,12 +112,15 @@ string Party::getPartyAcronym()const
     return partyAcronym;
 }
 
-/*
+
 list<Candidate*> Party::getCandidates()const
-{
-    return new list<Candidate>(this->candidates.values()); // Linked List makes it easier to sort by vote afterwards
+{   
+    //list<Candidate*> copy = values(candidates.begin(), candidates.end());
+    //new list<Candidate>(this->candidates.values())
+    
+    //return copy; // Linked List makes it easier to sort by vote afterwards
 }
-*/
+
 
     
 // int Party::compareTo(Party o){}

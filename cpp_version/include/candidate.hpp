@@ -29,6 +29,7 @@ private:
     int age;
 
 public:
+
     Candidate(int office, int number, string ballotName, int partyNumber, string partyAcronym, int federationNumber, string birthDate,  int gender, int status, string voteDestination, int condition, Date electionDate);
 
     string changeName();
