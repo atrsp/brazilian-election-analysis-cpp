@@ -44,5 +44,7 @@ int main(int argc, char const *argv[]) {
     Party p (11, "PT", "Partido dos Trabalhadores");
 
     p.addCandidate(c.getCandidateNumber(), &c);
+    map<int, Candidate*> copy = p->getCandidates()->find(11);
+
     return 0;
 }

@@ -113,12 +113,13 @@ string Party::getPartyAcronym()const
 }
 
 
-list<Candidate*> Party::getCandidates()const
+map<int, Candidate*> Party::getCandidates()const
 {   
     //list<Candidate*> copy = values(candidates.begin(), candidates.end());
     //new list<Candidate>(this->candidates.values())
     
     //return copy; // Linked List makes it easier to sort by vote afterwards
+    return candidates;
 }
 
 
